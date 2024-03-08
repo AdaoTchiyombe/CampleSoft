@@ -1,7 +1,7 @@
-const menu = [...document.getElementsByClassName('iconMenu')];
-const navBar=[...document.querySelectorAll('.menu')];
+import { Header } from "./elementos_reaproveitaveis.js";
+document.head.innerHTML +=
+  '<link rel="stylesheet" href="../css/style_header_and_footer.css">';
 
-console.log(navBar);
-menu.addEventListener('click', ()=> {
-    navBar.classList.toggle('show');
-})
+const header = new Header();
+
+header.showElements();
