@@ -1,0 +1,735 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+/*
+  font-family: "Poppins", sans-serif;
+*/
+
+/*Header Stlye */
+header {
+    height: 85px;
+    width: 100%;
+    background-color: #F2B138;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    color: white;
+    position: fixed;
+
+    z-index: 1;
+    
+}
+
+header  > .Logo > a > img {
+    width: 60px;
+    margin-left: 10px;
+}
+
+header > .donDamiao {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+
+} 
+
+header > .iconMenu > i {
+    font-size: 1.3rem;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+}
+
+.menu .show{
+    
+    width: 100%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    height: 100vh;
+    display: grid;
+    font-family: 'Poppins', sans-serif;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        '. ul';
+
+    box-shadow: -10px -10px 20px black;
+
+    & ul {
+        grid-area: ul;
+        padding: 10px;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        list-style: none;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        text-align: start;
+
+        & .heade {
+            display: flex;
+            flex-flow: row nowrap;
+            z-index: 2;
+            gap: 135px;
+
+            & i {
+                font-size: 1.5rem;
+                margin-top: 10px;
+            }
+        }
+
+
+        & a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: black;
+            line-height: 3rem;
+            cursor: pointer;
+        }
+
+        & form {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 5px;
+            
+            & .criarConta {
+                background-color: #e09c1c;
+                width: 250px;
+                height: 60px;
+                opacity: .9;
+
+            }
+
+            & .login {
+                background-color: white;
+                width: 250px;
+                height: 60px;
+                opacity: .9;
+            }
+
+        }
+
+    }
+}
+
+header > nav > ul {
+    display: none;
+}
+
+
+
+@media screen and (min-width: 685px) {
+    
+    header > .Logo > a > img {
+        margin-left: 25px;
+        transition-duration: .5s;
+    }
+    header > .donDamiao, header > .iconMenu {
+        display: none;
+        
+    transition-duration: .5s;
+    }
+
+    header > nav > ul  {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        gap: 20px;
+        
+    transition-duration: .5s;
+    }
+    
+    header > nav > ul > li > a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: 400; 
+        
+    transition-duration: .5s;
+    }
+
+    header > nav > ul > li:last-child {
+        margin-right: 20px;
+        
+    transition-duration: .5s;
+    }
+    
+    header > nav > ul > li > a:hover {
+        color: rgb(88, 88, 88);
+        transition-duration: 0.5s;
+    }
+
+    
+    header > nav > ul > li >a > hr {
+        color: #F2B138;
+        width: 0px;
+        transition-duration: .5s;
+    }
+
+    header > nav > ul > li >a:hover hr {
+        width: 100%;
+        border: 1px solid rgb(75, 73, 73);
+        
+    }
+}
+
+
+@media screen and (min-width: 1100px) {
+    header > nav > ul  {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        gap: 50px;
+        
+    transition-duration: .5s;
+    }
+}
+
+/*Main Stlye */
+
+main {
+    width: 100%;
+    height: 100%;
+
+    overflow-x: hidden;
+}
+
+main > .containerImg {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/paisagem01.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    
+    transition-duration: .5s;
+}
+
+.containerImg > .containerBg {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.411);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    transition-duration: .5s;
+}
+
+.containerBg  h1 {
+    font-size: 2.5rem;
+    font-family: 'Poppins';
+    font-weight: bolder;
+    color: #F2B138;
+}
+
+.containerBg  p {
+    color: white;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+main > .containerImg > .containerBg strong, main > .containerImg > .containerBg .orange {
+    color: #F2B138;
+}
+
+
+@media screen and (min-width: 770px) {
+
+    
+    main > .containerImg > .containerBg > .text {
+        width: 700px;
+        margin: 70px 50px;
+        transition-duration: .5s;
+    }
+    
+    .containerImg > .containerBg {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        text-align: start;
+        transition-duration: .5s;
+    }
+}
+
+/*Icons Style*/
+
+main > .containerIncons  {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: white;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+
+    transition-duration: .5s;
+    
+}
+
+
+.containerIncons > .Icon {
+    text-align: center;
+    transition-duration: .5s;
+}
+
+.containerIncons > .Icon > img {
+    width: 80px;
+    padding: 5px;
+}
+
+.containerIncons > .Icon > .titulo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    opacity: 1;
+}
+
+.containerIncons > .Icon > p {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    opacity: .7;
+}
+
+
+@media screen and (min-width: 780px) {
+    main > .containerIncons  {
+        display: flex;    
+        flex-flow: row wrap;
+        transition-duration: .5s;
+
+        
+    }
+    .containerIncons > .Icon {
+        width: 300px;
+        margin: 70px 40px;
+        transition-duration: .5s;
+    }
+}
+
+/*CLasses Style*/
+
+main > .Classes{
+    background-image: url(../img/pexels-william-fortunato-6140676.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 60vh;
+}
+
+.Classes > .background {
+    font-family: "Poppins", sans-serif;
+    background-color: #f3aa228e;
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+.Classes > .background > h1 {
+    font-size: 2.7rem;
+    font-weight: 800;
+    margin: 10px;
+    transition-duration: .5s;
+}
+
+.Classes > .background > h1:hover {
+    font-size: 3rem;
+}
+
+.background > p {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.background > .containerPai {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.containerPai > .ciclo {
+    padding: 20px;
+    border: 2px solid #F2B138;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.329);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    transition-duration: .5s;
+
+}
+
+.containerPai > .ciclo:hover {
+    width: 160px;
+    color: #F2B138;
+    background-color: white;
+}
+
+.containerPai > .ciclo > h2 {
+    font-weight: 800;
+    font-size: 1.6rem;
+}
+
+.containerPai > .ciclo  li {
+    font-size: 1.2rem;
+    
+}
+
+@media screen and (min-width: 680px) {
+    .containerPai > .ciclo {
+        width: 150px;
+    }
+
+    .containerPai > .ciclo:hover {
+        width: 200px;
+        color: #F2B138;
+        background-color: white;
+    }
+}
+
+/*Cursos Style*/
+
+main > .cursos {
+    width: 100%;
+    min-height: 50vh;
+    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+main > .cursos > h1 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #e09c1c;
+    margin-top: 30px;
+}
+
+.cursos > .containerBoxs {
+    width: 100%;
+    min-height: 50vh;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-flow: column nowrap;
+    
+    overflow: hidden;
+}
+
+main > .cursos  > .containerBoxs > a >.containerCursos {
+    height: 200px;
+    width: 300px;
+
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.418);
+    border-radius: 10px;
+    
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+
+    grid-template-rows: 50px 1fr;
+    grid-template-columns: 100%;
+}
+
+main > .cursos  .containerBoxs  .containerCursos > .header {
+    background-color: white;
+    color: #e09c1c;
+
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+
+    padding: 15px;
+    overflow: hidden;
+
+}
+
+
+main > .cursos  .containerBoxs  .containerCursos > .Img  {
+    background-image: url(../img/paisagem01.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    position: relative;
+
+    & span {
+        top: -60%;
+        left: 50%;
+        
+        transform: translate(-50%, 50%);
+
+        position: absolute;
+        
+    }
+
+    &:hover span{
+        top: 50%;
+        left: 50%;
+        transition: transform .3s ease-in-out;
+        transform: translate(-50%, -50%);
+    }
+
+
+
+}
+
+main > .cursos > .containerBoxs > a  span{
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+@media screen and (min-width: 610px) {
+    .cursos {
+
+        & .containerBoxs{
+            display:flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+
+            
+        }
+         
+    }
+                
+    .containerBoxs  .containerCursos  {
+            width: 400px;
+    }
+    
+}
+
+footer {
+    
+    padding: 10px 10px;
+    width: 100%;
+    background-color: #f2b138;
+    color:white;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 1fr 50px;
+    overflow: hidden;
+    
+    & .donDamiao {
+        padding: 10px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    
+        overflow: hidden;
+        
+
+        & img {
+            width: 60px;
+        }
+
+        & p {
+        font-weight:bold;
+        width: 100%;
+        text-align: center;
+        word-wrap: break-word;
+        }
+    }
+
+    & .mainFooter { 
+        padding: 20px;
+
+        display: grid;
+        align-content: center;
+        justify-content: start;
+        align-items: center;
+        justify-items: start;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+    
+
+            & .containerFooter {
+                width: 300px;
+                line-height: 2rem;
+                margin-inline: 20px;
+                margin-block: 10px;
+
+                & h2 {
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                }
+
+                & ul {
+
+                    & li {
+                        transition-duration: .5s;
+
+                        & a {
+                            color: white;
+                            opacity: 0.8;
+                        }
+                    }
+
+                    & li:hover {
+                        text-indent: 10px;
+                    }
+                    }
+
+                
+                }
+                & .subscricao {
+                    margin: 10px;
+
+                        & h2 {
+                            font-size: 1.5rem;
+                            font-weight:500;
+                            margin-bottom: 30px; 
+                        }
+                    
+                            & #containerForm {
+                                    display: flex;
+                                    flex-flow: column nowrap;
+                                    align-items: center;
+                                    justify-content: center; 
+
+                                & input[type="email"] {
+                                    width:280px;
+                                    height: 50px;
+                                    background-color: #f2b138c4;
+                                
+                                    border: 1px solid white;
+                                    border-radius: 5px;
+                                    padding: 20px;
+                                    outline: none;
+                                
+                                    color: white;
+
+                                    
+                                }
+                                & #email::placeholder {
+                                    font-size: 1.05rem;
+                                    color: white;
+                                    opacity: .5;
+                                }
+
+                                & button {
+                                    text-align: center;
+                                    
+                                    width:280px;
+                                    height: 50px;
+                                    background-color: white;
+                                    color: #F2A341;
+
+                                    font-weight: 700;
+                                    font-size: 1.2rem;
+
+                                    border: 1px solid white;
+                                    border-radius: 5px;
+
+                                    margin-top: 20px;
+                                    cursor: pointer;
+                                    transition-duration: .3s;
+                                }
+
+                                & button:active {
+                                    background-color: rgba(255, 255, 255, 0.712);
+                                    border: 3px solid #F2A341;
+                                }
+
+                                & .contacts {
+                                    margin-top: 20px;
+                                    margin-bottom: 20px;
+
+                                    width: 100%;
+                                    height: 50px;
+                                    display: flex;
+                                    flex-flow: row nowrap;
+                                    justify-content: center;
+
+                                    & a {
+
+                                        & i {
+                                            border: 1px solid white;
+
+                                            color: white;
+
+                                            padding:15px;
+                                            margin-right: 10px;
+
+                                            font-size: 1.2rem;
+
+                                            transition-duration: .5s;
+                                        }
+
+                                    }
+
+                                    & a:hover i{
+                                        border-radius: 100%;
+                                        color: #F2A341;
+                                        background-color: white;
+                                    }
+
+                                }
+                }
+        } 
+        }
+        & .rodape {
+            width: 100%;
+            text-align: center;
+            margin: 10px;
+
+            font-size: .9em;
+        }
+    }
+
+
